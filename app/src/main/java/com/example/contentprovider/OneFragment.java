@@ -48,7 +48,7 @@ Button button;
             SecondFragment secondFragment=new SecondFragment();
             Log.e("FragmentONe", String.valueOf(contactsList));
             Bundle args = new Bundle();
-            args.putSerializable("array",arrayList);
+            args.putSerializable("array",contactsList);
             secondFragment.setArguments(args);
 
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
