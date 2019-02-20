@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.contentprovider">
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,16 +16,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShareActivity"> <intent-filter>
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value="com.apkgetter.SearchResultsActivity" />
+        <activity android:name=".CustomDialog"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" /><intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".WebView" />
-        <activity android:name=".Imagepicker"></activity>
-        <activity android:name=".JsonMain">
+        </intent-filter> </activity>
+        <activity android:name=".ShareActivity">
 
         </activity>
+        <activity android:name=".WebView" ></activity>
+        <activity android:name=".Imagepicker" />
+        <activity android:name=".JsonMain"></activity>
         <activity android:name=".MainActivity" />
     </application>
 
